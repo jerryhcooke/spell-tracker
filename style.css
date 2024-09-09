@@ -1,0 +1,148 @@
+/* Nord Theme Colors */
+:root {
+    --nord0: #2E3440;
+    --nord1: #3B4252;
+    --nord3: #4C566A;
+    --nord4: #D8DEE9;
+    --nord5: #E5E9F0;
+    --nord6: #ECEFF4;
+    --nord7: #8FBCBB;  /* Pale Green */
+    --nord8: #88C0D0;
+    --nord9: #81A1C1;
+    --nord10: #5E81AC;
+    --nord11: #BF616A; /* Red */
+    --yellow: #EBCB8B; /* Yellow */
+    --orange: #D08770; /* Orange */
+}
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--nord0);
+    color: var(--nord4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--nord1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px var(--nord3);
+    width: 320px;
+    text-align: center;
+}
+
+/* Spell Name Box */
+input#spellName {
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--nord3);
+    border-radius: 5px;
+    background-color: var(--nord3);
+    color: var(--nord6);
+}
+
+/* Mins and Turns input fields */
+.duration-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%; /* Add gap to ensure spacing between inputs */
+}
+
+input#spellDurationMinutes,
+input#spellDurationTurns {
+    width: 47.5%; /* Adjust width to allow for equal gap */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--nord3);
+    border-radius: 5px;
+    background-color: var(--nord3);
+    color: var(--nord6);
+}
+
+/* Buttons (Add Spell and Next Turn) */
+button.primary-button {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--nord7);
+    color: var(--nord0);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button.primary-button:hover {
+    background-color: var(--nord8);
+}
+
+/* Align buttons in a single row */
+.buttons-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Spell List */
+.spell-list {
+    margin-top: 20px;
+}
+
+/* Spell Container Styling Based on Turn Count */
+.spell {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--nord6);
+    transition: background-color 0.5s ease;
+}
+
+.spell.green {
+    background-color: var(--nord7); /* Pale Green */
+}
+
+.spell.yellow {
+    background-color: var(--yellow); /* Yellow */
+}
+
+.spell.orange {
+    background-color: var(--orange); /* Orange */
+}
+
+.spell.red {
+    background-color: var(--nord11); /* Red */
+}
+
+.spell.black {
+    background-color: #000000; /* Black for when the spell has ended */
+    color: var(--nord6); /* Keep the text color light for contrast */
+}
+
+/* Button Container (right-aligned buttons) */
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Spell Action Buttons */
+.spell-actions {
+    background-color: var(--nord10);
+    color: var(--nord0);
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.spell-actions:hover {
+    background-color: var(--nord9);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-enter Wizard Spells</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Pre-enter Wizard Spells</h1>
+
+    <!-- Back to Main Page button -->
+    <button onclick="location.href='index.html'" class="primary-button">Back to Main Page</button>
+
+    <form id="preEnterForm">
+        <input type="text" id="spellName" placeholder="Spell Name" required>
+        <div class="duration-inputs">
+            <input type="number" id="spellDurationMinutes" placeholder="Mins" min="0">
+            <input type="number" id="spellDurationTurns" placeholder="Turns" min="0">
+        </div>
+        <div class="buttons-row">
+            <button type="submit" class="primary-button">Save Spell</button>
+        </div>
+    </form>
+
+    <div id="message"></div>
+    <div class="spell-list" id="spellList"></div>
+</div>
+
+<script src="pre-enter.js"></script>
+</body>
+</html>
