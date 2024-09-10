@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spell Tracker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spell Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>D&D Spell Duration Tracker</h1>
+  <h1>D&D Spell Tracker</h1>
 
-    <!-- Wizard and Cleric spell buttons -->
-    <div class="buttons-row">
-        <button onclick="location.href='wizard.html'" class="primary-button">Wizard Spells</button>
-        <button onclick="location.href='cleric.html'" class="primary-button">Cleric Spells</button>
+  <!-- Cog icon to go to settings -->
+  <div class="settings-icon">
+    <img src="img/cog-icon.svg" alt="Settings" class="settings-icon" onclick="location.href='settings.html'" />
+  </div>
+
+  <!-- Dropdown to select D&D class -->
+  <label for="classSelect">Select D&D Class:</label>
+  <select id="classSelect">
+    <option value="Select a class">Select a class</option> <!-- Placeholder option -->
+    <option value="Wizard">Wizard</option>
+    <option value="Cleric">Cleric</option>
+    <!-- Add more class options here -->
+  </select>
+
+
+  <!-- Form to add spells dynamically -->
+  <form id="spellForm">
+    <input type="text" class="spell-input" id="spellName" placeholder="Spell Name" required>
+    <div class="duration-inputs">
+      <input type="number" class="duration-input" id="spellDurationMinutes" placeholder="Mins" min="0">
+      <input type="number" class="duration-input" id="spellDurationTurns" placeholder="Turns" min="0">
     </div>
 
-    <!-- Form to add spells dynamically -->
-    <form id="spellForm">
-        <input type="text" id="spellName" placeholder="Spell Name" required>
+    <div class="buttons-row">
+      <button type="submit" class="primary-button">Add Spell</button>
+      <button id="nextTurnButton" class="primary-button">Next Turn</button>
+    </div>
+  </form>
 
-        <!-- Mins and Turns input fields -->
-        <div class="duration-inputs">
-            <input type="number" id="spellDurationMinutes" placeholder="Mins" min="0">
-            <input type="number" id="spellDurationTurns" placeholder="Turns" min="0">
-        </div>
-
-        <div class="buttons-row">
-            <button type="submit" class="primary-button">Add Spell</button>
-            <button id="nextTurnButton" class="primary-button">Next Turn</button>
-        </div>
-    </form>
-
-    <div id="message"></div>
-    <div class="spell-list" id="spellList"></div>
+  <div id="message"></div>
+  <div class="spell-list" id="spellList"></div>
 </div>
 
-<script src="app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

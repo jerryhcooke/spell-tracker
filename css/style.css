@@ -1,0 +1,354 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles - Unified Styling for Main and Settings Page
+   ========================================================================== */
+/* Nord Theme Colors */
+:root {
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;  /* Pale Green */
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A; /* Red */
+  --yellow: #EBCB8B; /* Yellow */
+  --orange: #D08770; /* Orange */
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--nord0);
+  color: var(--nord4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: var(--nord1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px var(--nord3);
+  width: 320px;
+  text-align: center;
+}
+
+/* Input Fields - Shared styling for both main and settings page */
+.spell-input, .duration-input {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid var(--nord3);
+  border-radius: 5px;
+  background-color: var(--nord3);
+  color: var(--nord6);
+}
+
+/* Duration Inputs Layout */
+.duration-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%; /* Gap between minutes and turns input */
+}
+
+.duration-inputs .duration-input {
+  width: 47.5%; /* Adjust width to allow for equal gap */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid var(--nord3);
+  border-radius: 5px;
+  background-color: var(--nord3);
+  color: var(--nord6);
+}
+
+/* Center the table and form */
+table, form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Table styles */
+#spellsTable {
+  width: 95%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+#spellsTable th, #spellsTable td {
+  padding: 10px;
+  border: 1px solid var(--nord3);
+  background-color: var(--nord3);
+  color: var(--nord6);
+}
+
+#spellsTable th {
+  background-color: var(--nord3);
+}
+
+/* Button styling */
+button.primary-button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: var(--nord10);
+  color: var(--nord0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.primary-button:hover {
+  background-color: var(--nord9);
+}
+
+/* Align buttons in a single row */
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Spell List */
+.spell-list {
+  margin-top: 20px;
+}
+
+/* Spell Container Styling Based on Turn Count */
+.spell {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--nord6);
+  transition: background-color 0.5s ease;
+}
+
+.spell.green {
+  background-color: var(--nord7); /* Pale Green */
+}
+
+.spell.yellow {
+  background-color: var(--yellow); /* Yellow */
+}
+
+.spell.orange {
+  background-color: var(--orange); /* Orange */
+}
+
+.spell.red {
+  background-color: var(--nord11); /* Red */
+}
+
+.spell.black {
+  background-color: #000000; /* Black for when the spell has ended */
+  color: var(--nord6); /* Keep the text color light for contrast */
+}
+
+/* Button Container (right-aligned buttons) */
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* Spell Action Buttons */
+.spell-actions {
+  background-color: var(--nord10);
+  color: var(--nord0);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.spell-actions:hover {
+  background-color: var(--nord9);
+}
+
+.settings-icon {
+  width: 15%;
+  height: auto;
+  cursor: pointer;
+}
+
+.settings-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

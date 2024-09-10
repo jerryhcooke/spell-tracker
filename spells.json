@@ -1,0 +1,12 @@
+{
+  "Wizard": [
+    {
+      "name": "Haste",
+      "duration": 10
+    },
+    {
+      "name": "Bladesinging",
+      "duration": 10
+    }
+  ]
+}

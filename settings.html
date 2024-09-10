@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Settings</h1>
+
+  <!-- Back to main page button -->
+  <div class="back-button">
+    <button onclick="location.href='index.html'" class="primary-button">Back to Main Page</button>
+  </div>
+
+  <br>
+
+  <!-- Dropdown to select D&D class -->
+  <label for="classSelect">Select D&D Class:</label>
+  <select id="classSelect">
+    <option value="Select a class">Select a class</option> <!-- Placeholder option -->
+    <option value="Wizard">Wizard</option>
+    <option value="Cleric">Cleric</option>
+    <!-- Add more class options here -->
+  </select>
+
+  <!-- Table to display spells for the selected class -->
+  <table id="spellsTable">
+    <thead>
+    <tr>
+      <th>Spell Name</th>
+      <th>Turns</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Spells will be dynamically inserted here -->
+    </tbody>
+  </table>
+
+  <!-- Form to add new spells for the selected class -->
+  <form id="addSpellForm">  <!-- Updated to match settings.js -->
+    <input type="text" class="spell-input" id="newSpellName" placeholder="Spell Name" required>
+    <div class="duration-inputs">
+      <input type="number" class="duration-input" id="newSpellDurationMinutes" placeholder="Mins" min="0">
+      <input type="number" class="duration-input" id="newSpellDurationTurns" placeholder="Turns" min="0">
+    </div>
+    <button type="submit" class="primary-button">Add Spell</button>
+  </form>
+
+</div>
+
+<script src="js/settings.js"></script>
+</body>
+</html>
